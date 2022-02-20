@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "WorkFinder";
+}
+<h3>WorkFinder</h3>
+<div class="container">
+    <div>
+        <ul class="nav navbar-nav">
+            <li><a href="~/Authorization/Authorization" class="navbar-brand">Увійти</a></li>
+        </ul>
+    </div>
+</div>
+<table class="table-condensed">
+    <tr>
+        <td>Назва книги</td>
+        <td>Автор</td>
+        <td>Ціна за неділю</td>
+        <td></td>
+    </tr>
+    @foreach (var post in ViewBag.Posts)
+    {
+        <tr>
+            <td>@post.PostName</td>
+            <td>@post.Salary</td>
+            <td>@post.AdPostId</td>
+            <td><a href="~/AdPost/ShowPostForAdmin?postid=@post.AdPostId&login=@ViewBag.AdminLogin&password=@ViewBag.AdminPassword">Детальніше</a></td>
+        </tr>
+    }
+</table>

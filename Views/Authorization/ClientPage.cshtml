@@ -1,0 +1,43 @@
+﻿<div class="container body-content">
+    <footer>
+        <h1>Клієнт</h1>
+    </footer>
+    <footer>
+        <h2>@ViewBag.Client.Name</h2>
+    </footer>
+    <footer>
+        <h2>@ViewBag.Client.Surename</h2>
+    </footer>
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a href="~/AdPost/CreatePost?clientid=@ViewBag.Client.Id" class="navbar-brand">Створити оголошення</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a href="~/AdPost/ShowAllPosts?clientid=@ViewBag.Client.Id" class="navbar-brand">Переглянути оголошення</a></li>
+        </ul>
+    </div>
+    <div>
+        <p>Запити на виконання ваших оголошень</p>
+        <table class="table-condensed">
+            <tr>
+                <td>Оголошення</td>
+                <td></td>
+            </tr>
+            @foreach (var request in ViewBag.ClientPostRequests)
+            {
+                @foreach (var post in ViewBag.ClientPosts)
+                {
+                    @if (request.AdPostId == post.AdPostId)
+                    {
+                        <tr>
+                            <td>@post.PostName</td>
+                            <td><a href="~/AdPost/ShowRequest?requestid=@request.RequestId&clientid=@ViewBag.Client.Id">Детальніше</a></td>
+                        </tr>
+                    }
+                }
+            }
+        </table>
+    </div>
+</div>

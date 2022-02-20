@@ -1,0 +1,24 @@
+﻿
+<div class="container body-content">
+    <footer>
+        <h1>Адміністратор</h1>
+    </footer>
+    <footer>
+        <h2>@ViewBag.Admin.Name</h2>
+    </footer>
+    <footer>
+        <h2>@ViewBag.Admin.Surename</h2>
+    </footer>
+    <hr />
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a href="~/Home/Index" class="navbar-brand">Вийти</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li><a href="~/AdPost/ShowAllPostsForAdmin?login=@ViewBag.Admin.Login&password=@ViewBag.Admin.Password" class="navbar-brand">Переглянути оголошення</a></li>
+        </ul>
+    </div>
+</div>

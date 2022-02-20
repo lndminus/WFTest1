@@ -1,0 +1,43 @@
+﻿
+<h2>Реєстрація</h2>
+
+<form method="post" action="~/Authorization/RegistrationPage">
+
+    <div class="form-group">
+        <h2 style="color:red">@ViewBag.Massage</h2>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Ім'я:</label>
+        <div class="col-md-4">
+            <input type="text" name="name" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Фамілія:</label>
+        <div class="col-md-4">
+            <input type="text" name="surename" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Логін:</label>
+        <div class="col-md-4">
+            <input type="text" name="login" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Пароль:</label>
+        <div class="col-md-4">
+            <input type="text" name="password" class="form-control" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Зареєструвати" />
+        </div>
+    </div>
+</form>
